@@ -298,6 +298,8 @@ int main()
     char nome[50], name[50], turma;
     int mat,m;
     float frequencia, nota;
+    node_aluno *aux;
+    int cont=0;
 
     Lista *lista = onCreate(); //criando lista
 
@@ -414,7 +416,40 @@ int main()
         
 
         case 5:
-            
+
+            printf("5 . Mostrar todos os alunos de uma turma:\n\n");
+
+            setbuf(stdin,NULL);
+            printf("Digite a turma: ");
+            scanf("%c",&turma);
+            setbuf(stdin,NULL);
+            while(turma!='A'&&turma!='B'){
+                printf("Turma inválida, são aceitos os caracteres 'A' e 'B'\nInsira uma turma válida: ");
+                scanf("%c",&turma);
+                setbuf(stdin,NULL);
+            }
+
+            printf("\n");
+
+            for(aux = lista -> begin; aux != NULL; aux = aux -> next){
+
+                if(aux -> class == turma){
+
+                    cont++;
+                    printf("%d. %s\n",cont, aux -> name);
+
+                }
+
+            }
+
+            if(cont==0){
+
+                printf("N�o existem alunos nessa turma!\n");
+
+            }
+            printf("\n");
+            cont = 0;
+
             break;
         
 
