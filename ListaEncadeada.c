@@ -118,16 +118,16 @@ void remove_aluno(Lista *lista, int mat){
             //caso sÃ³ tenha UM nÃ³
             if(lista -> begin == lista -> end){
 
-                lista -> begin == NULL;
-                lista -> end == NULL;
+                lista -> begin = NULL;
+                lista -> end = NULL;
 
             }else{
             //caso nÃ£o
 
                 //se for o primeiro nÃ³
-                if(lista -> begin == after){
+                if(lista -> begin = after){
 
-                    lista -> begin == after -> next;
+                    lista -> begin = after -> next;
                     //o inicio pega o prÃ³ximo nÃ³
 
                 }else if(lista -> end == after){
@@ -240,10 +240,10 @@ void print_name(Lista *lista, char nome[]){
 
         if(strcmp(nome, i -> name)==0){
 
-            printf("\nMatrí­cula: %d\n", i -> enrollment);
+            printf("\nMatrï¿½ï¿½cula: %d\n", i -> enrollment);
             printf("Nome: %s\n", i -> name);
             printf("Nota: %.2f\n", i -> note);
-            printf("Frequência: %.2f\n", i -> frequency);
+            printf("Frequï¿½ncia: %.2f\n", i -> frequency);
             printf("Turma: %c\n", i -> class);
             printf("\n");
             return;
@@ -273,10 +273,10 @@ void print_mat(Lista *lista, int mat){
 
         if(i -> enrollment == mat){
 
-            printf("\nMatrí­cula: %d\n", i -> enrollment);
+            printf("\nMatrï¿½ï¿½cula: %d\n", i -> enrollment);
             printf("Nome: %s\n", i -> name);
             printf("Nota: %.2f\n", i -> note);
-            printf("Frequência: %.2f\n", i -> frequency);
+            printf("Frequï¿½ncia: %.2f\n", i -> frequency);
             printf("Turma: %c\n", i -> class);
             printf("\n");
             return;
@@ -306,16 +306,16 @@ int main()
     do
     {
         
-        printf("Escolha uma opção:\n\n");
-        printf("1. Cadastrar aluno no iní­cio da lista;\n");
+        printf("Escolha uma opï¿½ï¿½o:\n\n");
+        printf("1. Cadastrar aluno no inï¿½ï¿½cio da lista;\n");
         printf("2. Remover aluno;\n");
         printf("3. Pesquisar aluno pelo nome;\n");
-        printf("4. Pesquisar aluno por matrí­cula;\n");
+        printf("4. Pesquisar aluno por matrï¿½ï¿½cula;\n");
         printf("5. Mostrar todos os alunos de uma turma;\n");
         printf("6. Mostrar os alunos com a maior e menor nota;\n");
         printf("7. Ordenar toda a lista de alunos por nome;\n");
         printf("8. Sair.\n");
-        printf("\nDigite sua opção:");
+        printf("\nDigite sua opï¿½ï¿½o:");
         scanf("%d",&o);
         printf("\n");
 
@@ -405,9 +405,9 @@ int main()
 
         case 4:
 
-            printf("3 . Pesquisar aluno pela matrícula:\n\n");
+            printf("3 . Pesquisar aluno pela matrï¿½cula:\n\n");
 
-            printf("Digite a matrícula do aluno que serÃ¡ pesquisado: ");
+            printf("Digite a matrï¿½cula do aluno que serÃ¡ pesquisado: ");
             scanf("%d", &mat);
 
             print_mat(lista,mat);
@@ -444,7 +444,7 @@ int main()
 
             if(cont==0){
 
-                printf("Não existem alunos nessa turma!\n");
+                printf("Nï¿½o existem alunos nessa turma!\n");
 
             }
             printf("\n");
