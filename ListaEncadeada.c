@@ -252,7 +252,7 @@ void print_name(Lista *lista, char nome[]){
 
     }
     
-    printf("\nAluno nï¿½o encontrado!\n");
+    printf("\nAluno não encontrado!\n");
     return;
 
 }
@@ -276,7 +276,7 @@ void print_mat(Lista *lista, int mat){
             printf("\nMatrícula: %d\n", i -> enrollment);
             printf("Nome: %s\n", i -> name);
             printf("Nota: %.2f\n", i -> note);
-            printf("Frequ?ncia: %.2f\n", i -> frequency);
+            printf("Frequência: %.2f\n", i -> frequency);
             printf("Turma: %c\n", i -> class);
             printf("\n");
             return;
@@ -285,7 +285,7 @@ void print_mat(Lista *lista, int mat){
 
     }
     
-    printf("\nAluno nï¿½o encontrado!\n");
+    printf("\nAluno não encontrado!\n");
     return;
 
 }
@@ -403,10 +403,14 @@ int main()
         printf("\nDigite sua opção:");
         scanf("%d",&o);
         printf("\n");
+        
 
         switch (o){
 
         case 1:
+
+            system("pause");
+            system("cls");
             
             printf("1 . Cadastrar aluno:\n\n");
 
@@ -459,11 +463,17 @@ int main()
 
             //inserindo dados na lista
             insert_aluno(lista,mat,nome,nota,frequencia,turma);
+
+            system("pause");
+            system("cls");
             
             break;
         
 
         case 2:
+
+            system("pause");
+            system("cls");
 
             printf("2 . Remover Aluno:\n\n");
 
@@ -472,10 +482,16 @@ int main()
         
             remove_aluno(lista,m);
             
+            system("pause");
+            system("cls");
+
             break;
         
 
         case 3:
+
+            system("pause");
+            system("cls");
 
             printf("3 . Pesquisar aluno pelo nome:\n\n");
 
@@ -485,10 +501,16 @@ int main()
 
             print_name(lista,name);
             
+            system("pause");
+            system("cls");
+
             break;
         
 
         case 4:
+
+            system("pause");
+            system("cls");
 
             printf("3 . Pesquisar aluno pela matrícula:\n\n");
 
@@ -497,10 +519,16 @@ int main()
 
             print_mat(lista,mat);
             
+            system("pause");
+            system("cls");
+
             break;
         
 
         case 5:
+
+            system("pause");
+            system("cls");
 
             printf("5 . Mostrar todos os alunos de uma turma:\n\n");
 
@@ -521,7 +549,7 @@ int main()
                 if(aux -> class == turma){
 
                     cont++;
-                    printf("%d. %s\n", cont, aux -> name);
+                    printf("%d . %s\n", cont, aux -> name);
 
                 }
 
@@ -532,13 +560,19 @@ int main()
                 printf("Não existem alunos nessa turma!\n");
 
             }
-            
+
             printf("\n");
             cont = 0;
+
+            system("pause");
+            system("cls");
 
             break;
         
         case 6:
+
+            system("pause");
+            system("cls");
 
             printf("6 . Ordenar toda a lista de alunos por nome;\n\n");
 
@@ -558,9 +592,15 @@ int main()
             }
             cont = 0;
             
+            system("pause");
+            system("cls");
+
             break;
 
         case 7:
+
+            system("pause");
+            system("cls");
 
             for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
@@ -578,7 +618,7 @@ int main()
             for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
                 if(i -> note == little){
-                    printf("%.2f. %s\n", i -> note, i -> name);
+                    printf("%.2f . %s\n", i -> note, i -> name);
                     cont++;
                 }
 
@@ -589,12 +629,15 @@ int main()
             for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
                 if(i -> note == big){
-                    printf("%.2f. %s\n", i -> note, i -> name);
+                    printf("%.2f . %s\n", i -> note, i -> name);
                     
                 }
 
             }
             
+            printf("\n");
+            system("pause");
+            system("cls");
             
             break;        
         
