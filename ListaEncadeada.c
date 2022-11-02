@@ -384,7 +384,8 @@ int main()
     float frequencia, nota;
     node_aluno *aux;
     int cont=0;
-
+    int big = -0.01, little = 10.01;
+    
     Lista *lista = onCreate(); //criando lista
 
     do
@@ -542,22 +543,57 @@ int main()
 
             Name_Sort(lista);
             
-            node_aluno *i;
+            
             cont = 1;
-            for(i = lista -> begin; i != NULL ; i = i -> next){
+            for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
                 printf("%d. Nome: %s\n", cont, i -> name);
                 printf("    Matrícula: %d\n", i -> enrollment);
                 printf("    Nota: %.2f\n", i -> note);
-                printf("    Frequência: %.2f\n", i -> frequency);
+                printf("    Frequência: %.2f%\n", i -> frequency);
                 printf("    Turma: %c\n\n", i -> class);
 
                 cont++;
             }
+            cont = 0;
             
             break;
 
         case 7:
+
+            for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
+
+                if(i -> note > big){
+                    big = i -> note;
+                }
+
+                if(i -> note < little){
+                    little = i -> note;
+                }
+
+            }
+
+            printf("Menor(es):\n");
+            for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
+
+                if(i -> note == little){
+                    printf("%.2f. %s\n", i -> note, i -> name);
+                    cont++;
+                }
+
+            }
+            
+
+            printf("\nMaior(es):\n");
+            for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
+
+                if(i -> note == big){
+                    printf("%.2f. %s\n", i -> note, i -> name);
+                    
+                }
+
+            }
+            
             
             break;        
         
