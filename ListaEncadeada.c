@@ -650,6 +650,8 @@ int main()
 
     } while(o!=8);
     
+    printf("\nVocê saiu do programa...");
+    onDestroy(lista);
 
     return 0;
 }
