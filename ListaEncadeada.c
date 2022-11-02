@@ -38,7 +38,7 @@ Lista* onCreate(){//cria lista
 
     if(lista == NULL){//caso nï¿½o haja memï¿½ria
 
-        printf("\nMemï¿½ria insuficiente!\n");
+        printf("\nMemória insuficiente!\n");
         exit(1); 
 
     }
@@ -60,7 +60,7 @@ void insert_aluno(Lista *lista, int mat, char nome[], float nota, float frequenc
 
     if(node == NULL){//caso nï¿½o haja memï¿½ria
 
-        printf("\nMemï¿½ria insuficiente!\n");
+        printf("\nMemória insuficiente!\n");
         exit(1); 
 
     }
@@ -94,12 +94,12 @@ void remove_aluno(Lista *lista, int mat){
 
     //lista nï¿½o criada
     if(lista == NULL){
-         printf("\nLista nï¿½o criada.\n");
+         printf("\nLista não criada.\n");
          return;
     }
     //nï¿½o hï¿½ nï¿½s
     if(lista -> begin == NULL){
-        printf("\nNï¿½o hï¿½ alunos.\n");
+        printf("\nNão há alunos.\n");
         return;
     }
 
@@ -155,7 +155,7 @@ void remove_aluno(Lista *lista, int mat){
 
     }//fim do for
 
-    printf("\nAluno nï¿½o encontrado.\n");
+    printf("\nAluno não encontrado.\n");
     return;
 
 }
@@ -171,7 +171,7 @@ void onDestroy(Lista *lista){
     //se nï¿½o houver memï¿½ria
     if(node == NULL){
 
-        printf("\nMemï¿½ria insuficiente!\n");
+        printf("\nMemória insuficiente!\n");
         exit(1); 
 
     }
@@ -203,7 +203,7 @@ int Check_Mat(Lista *lista, int mat){
     //lista nï¿½o criada
     if(lista == NULL){
 
-        printf("\nLista nï¿½o criada!\n"); 
+        printf("\nLista não criada!\n"); 
         return;
 
     }
@@ -228,7 +228,7 @@ void print_name(Lista *lista, char nome[]){
 
     if(lista == NULL){
 
-        printf("\nLista nï¿½o criada!\n"); 
+        printf("\nLista não criada!\n"); 
         return;
 
     }
@@ -240,10 +240,10 @@ void print_name(Lista *lista, char nome[]){
 
         if(strcmp(nome, i -> name)==0){
 
-            printf("\nMatr??cula: %d\n", i -> enrollment);
+            printf("\nMatrícula: %d\n", i -> enrollment);
             printf("Nome: %s\n", i -> name);
             printf("Nota: %.2f\n", i -> note);
-            printf("Frequ?ncia: %.2f\n", i -> frequency);
+            printf("Frequência: %.2f\n", i -> frequency);
             printf("Turma: %c\n", i -> class);
             printf("\n");
             return;
@@ -261,7 +261,7 @@ void print_mat(Lista *lista, int mat){
 
     if(lista == NULL){
 
-        printf("\nLista nï¿½o criada!\n"); 
+        printf("\nLista não criada!\n"); 
         return;
 
     }
@@ -273,7 +273,7 @@ void print_mat(Lista *lista, int mat){
 
         if(i -> enrollment == mat){
 
-            printf("\nMatr??cula: %d\n", i -> enrollment);
+            printf("\nMatrícula: %d\n", i -> enrollment);
             printf("Nome: %s\n", i -> name);
             printf("Nota: %.2f\n", i -> note);
             printf("Frequ?ncia: %.2f\n", i -> frequency);
@@ -292,14 +292,14 @@ void print_mat(Lista *lista, int mat){
 
 void Name_Sort(Lista *lista){
 
-    //lista nï¿½o criada
+    //lista não criada
     if(lista == NULL){
-         printf("\nLista nï¿½o criada.\n");
+         printf("\nLista não criada.\n");
          return;
     }
-    //nï¿½o hï¿½ nï¿½s
+    //não há alunos
     if(lista -> begin == NULL){
-        printf("\nNï¿½o hï¿½ alunos.\n");
+        printf("\nNão há alunos.\n");
         return;
     }
 
@@ -353,14 +353,14 @@ void Name_Sort(Lista *lista){
 
 lista_print(Lista *lista){
 
-    //lista nï¿½o criada
+    //lista não criada
     if(lista == NULL){
-         printf("\nLista nï¿½o criada.\n");
+         printf("\nLista não criada.\n");
          return;
     }
-    //nï¿½o hï¿½ nï¿½s
+    //não há alunos
     if(lista -> begin == NULL){
-        printf("\nNï¿½o hï¿½ alunos.\n");
+        printf("\nNão há alunos.\n");
         return;
     }
 
@@ -391,16 +391,16 @@ int main()
     do
     {
         
-        printf("Escolha uma op??o:\n\n");
-        printf("1. Cadastrar aluno no in??cio da lista;\n");
+        printf("Escolha uma opção:\n\n");
+        printf("1. Cadastrar aluno no início da lista;\n");
         printf("2. Remover aluno;\n");
         printf("3. Pesquisar aluno pelo nome;\n");
-        printf("4. Pesquisar aluno por matr??cula;\n");
+        printf("4. Pesquisar aluno por matrícula;\n");
         printf("5. Mostrar todos os alunos de uma turma;\n");
         printf("6. Ordenar toda a lista de alunos por nome;\n");
         printf("7. Mostrar os alunos com a maior e menor nota;\n");
         printf("8. Sair.\n");
-        printf("\nDigite sua op??o:");
+        printf("\nDigite sua opção:");
         scanf("%d",&o);
         printf("\n");
 
@@ -411,15 +411,15 @@ int main()
             printf("1 . Cadastrar aluno:\n\n");
 
 
-            printf("Digite a matrï¿½cula do(a) aluno(a): ");
+            printf("Digite a matrícula do(a) aluno(a): ");
             scanf("%d",&mat);
             while(mat>99999||mat<0){
-                printf("Matrï¿½cula invï¿½lida, sï¿½o aceitos nï¿½meros entre 0 e 99999\nInsira uma matrï¿½cula vï¿½lida: ");
+                printf("Matrícula inválida, são aceitos números entre 0 e 99999\nInsira uma matrícula válida: ");
                 scanf("%d",&mat);
             }
             //checagem de matrï¿½cula
             while(Check_Mat(lista,mat)==1){
-                printf("Matrï¿½cula jï¿½ cadastrada!\nInsira outro nï¿½mero de matricula:");
+                printf("Matrícula já cadastrada!\nInsira outro número de matrícula:");
                 scanf("%d",&mat);
             }
                     
@@ -432,7 +432,7 @@ int main()
             printf("Digite a nota do(a) aluno(a): ");
             scanf("%f",&nota);
             while(nota>10.0||nota<0.0){
-                printf("Nota invï¿½lida, sï¿½o aceitos nï¿½meros entre 0,0 e 10,0\nInsira uma nota vï¿½lida: ");
+                printf("Nota inválida, sâo aceitos números entre 0,0 e 10,0\nInsira uma nota válida: ");
                 scanf("%f",&nota);
             }
 
@@ -441,7 +441,7 @@ int main()
             printf("Digite a frequï¿½ncia do(a) aluno(a): ");
             scanf("%f",&frequencia);
             while(frequencia>100.0||frequencia<0.0){
-                printf("Frequï¿½ncia invï¿½lida, sï¿½o aceitos nï¿½meros entre 0,0 e 100,0\nInsira uma frequï¿½ncia vï¿½lida: ");
+                printf("Frequência inválida, são aceitos números entre 0,0 e 100,0\nInsira uma frequência válida: ");
                 scanf("%f",&frequencia);
             }
             setbuf(stdin,NULL);
@@ -452,7 +452,7 @@ int main()
             scanf("%c",&turma);
             setbuf(stdin,NULL);
             while(turma!='A'&&turma!='B'){
-                printf("Turma invï¿½lida, sï¿½o aceitos os caracteres 'A' e 'B'\nInsira uma turma vï¿½lida: ");
+                printf("Turma inválida, são aceitos os caracteres 'A' e 'B'\nInsira uma turma válida: ");
                 scanf("%c",&turma);
                 setbuf(stdin,NULL);
             }
@@ -467,7 +467,7 @@ int main()
 
             printf("2 . Remover Aluno:\n\n");
 
-            printf("Digite o nï¿½mero de matrï¿½cula do aluno que serï¿½ removido: ");
+            printf("Digite o número de matrícula do aluno que será removido: ");
             scanf("%d",&m);
         
             remove_aluno(lista,m);
@@ -479,7 +479,7 @@ int main()
 
             printf("3 . Pesquisar aluno pelo nome:\n\n");
 
-            printf("Digite o nome do aluno que serï¿½ pesquisado: ");
+            printf("Digite o nome do aluno que será pesquisado: ");
             setbuf(stdin,NULL);
             gets(name);
 
@@ -490,9 +490,9 @@ int main()
 
         case 4:
 
-            printf("3 . Pesquisar aluno pela matr?cula:\n\n");
+            printf("3 . Pesquisar aluno pela matrícula:\n\n");
 
-            printf("Digite a matr?cula do aluno que serï¿½ pesquisado: ");
+            printf("Digite a matrícula do aluno que será pesquisado: ");
             scanf("%d", &mat);
 
             print_mat(lista,mat);
@@ -509,7 +509,7 @@ int main()
             scanf("%c",&turma);
             setbuf(stdin,NULL);
             while(turma!='A'&&turma!='B'){
-                printf("Turma invï¿½lida, sï¿½o aceitos os caracteres 'A' e 'B'\nInsira uma turma vï¿½lida: ");
+                printf("Turma inválida, são aceitos os caracteres 'A' e 'B'\nInsira uma turma válida: ");
                 scanf("%c",&turma);
                 setbuf(stdin,NULL);
             }
@@ -529,9 +529,10 @@ int main()
 
             if(cont==0){
 
-                printf("N?o existem alunos nessa turma!\n");
+                printf("Não existem alunos nessa turma!\n");
 
             }
+            
             printf("\n");
             cont = 0;
 
