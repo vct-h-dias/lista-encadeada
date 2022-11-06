@@ -208,6 +208,10 @@ int Check_Mat(Lista *lista, int mat){
 
     }
     //nï¿½o hï¿½ alunos
+    if(lista -> begin == NULL){
+        printf("\nNão há alunos.\n");
+        return;
+    }
 
     node_aluno *i;
     for(i = lista -> begin; i != NULL ; i = i -> next){
@@ -233,6 +237,10 @@ void print_name(Lista *lista, char nome[]){
 
     }
     //nï¿½o hï¿½ alunos
+    if(lista -> begin == NULL){
+        printf("\nNão há alunos.\n");
+        return;
+    }
 
     node_aluno *i;
 
@@ -266,6 +274,11 @@ void print_mat(Lista *lista, int mat){
 
     }
     //nï¿½o hï¿½ alunos
+    if(lista -> begin == NULL){
+        printf("\nNão há alunos.\n");
+        return;
+    }
+
 
     node_aluno *i;
 
@@ -480,6 +493,7 @@ int main()
             printf("Digite o número de matrícula do aluno que será removido: ");
             scanf("%d",&m);
         
+            //apos ler a mat removemos ela
             remove_aluno(lista,m);
             
             system("pause");
@@ -499,6 +513,7 @@ int main()
             setbuf(stdin,NULL);
             gets(name);
 
+            //apos ler o nome printamos ele
             print_name(lista,name);
             
             system("pause");
@@ -512,11 +527,12 @@ int main()
             system("pause");
             system("cls");
 
-            printf("3 . Pesquisar aluno pela matrícula:\n\n");
+            printf("4 . Pesquisar aluno pela matrícula:\n\n");
 
             printf("Digite a matrícula do aluno que será pesquisado: ");
             scanf("%d", &mat);
 
+            //apos ler a mat printamos ela
             print_mat(lista,mat);
             
             system("pause");
@@ -544,17 +560,20 @@ int main()
 
             printf("\n");
 
+            //apos escolher uma turma um laço de repetição percorre toda a lista
+            //caso tenha os alunos dessa turma suas infos sao printadas
             for(aux = lista -> begin; aux != NULL; aux = aux -> next){
 
                 if(aux -> class == turma){
 
-                    cont++;
+                    cont++;//contando alunos da turma
                     printf("%d . %s\n", cont, aux -> name);
 
                 }
 
             }
 
+            //caso o contador for 0, não alunos daquela turma
             if(cont==0){
 
                 printf("Não existem alunos nessa turma!\n");
@@ -576,10 +595,11 @@ int main()
 
             printf("6 . Ordenar toda a lista de alunos por nome;\n\n");
 
-            Name_Sort(lista);
+            Name_Sort(lista);//ordena a lista
             
             
-            cont = 1;
+            cont = 1;//(contador apenas para numerar os alunos)
+            //imprimimos a lista
             for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
                 printf("%d. Nome: %s\n", cont, i -> name);
@@ -602,6 +622,9 @@ int main()
             system("pause");
             system("cls");
 
+            printf("7 . Mostrar os alunos com a maior e menor nota;\n\n");
+
+            //percorremos a lista definindo a maior nota (big) e menor nota (little)
             for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
                 if(i -> note > big){
@@ -615,6 +638,7 @@ int main()
             }
 
             printf("Menor(es):\n");
+            //percorremos dnv e printamos todos aqueles com aquela nota
             for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
                 if(i -> note == little){
@@ -626,6 +650,7 @@ int main()
             
 
             printf("\nMaior(es):\n");
+            //percorremos dnv e printamos todos aqueles com aquela nota
             for(node_aluno *i = lista -> begin; i != NULL ; i = i -> next){
 
                 if(i -> note == big){
@@ -641,7 +666,17 @@ int main()
             
             break;        
         
+        case 8:
+        
+            printf("Você saiu do programa...\n");
+            onDestroy(lista);//liberamos a lista
+
+            break;
+
         default:
+            
+            //caso a entrada não for válida
+            printf("Insira uma opção válida!\n");
 
             break;
         }
@@ -650,8 +685,7 @@ int main()
 
     } while(o!=8);
     
-    printf("\nVocê saiu do programa...");
-    onDestroy(lista);
+    
 
     return 0;
 }
